@@ -35,7 +35,7 @@ ad()
 def tarih():
         Dogumgun = input("Lütfen doğüm gününüzü giriniz (sadece gün)")
         Dogumay = input("Lütfen doğduğunuz ayı giriniz (sadece ay)")
-        DogumYil = input("Lütfen doğuğunuz yılı giriniz (sadece yıl)")
+        DogumYil = int(input("Lütfen doğuğunuz yılı giriniz (sadece yıl)"))
         DogumGun = driver.find_element(By.XPATH, "//*[@id='requestDogumGun']")
         DogumGun.click()
         DogumGun.send_keys(Dogumgun)
