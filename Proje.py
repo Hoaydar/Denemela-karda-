@@ -33,8 +33,8 @@ def ad():
 ad()
 
 def tarih():
-        Dogumgun = input("Lütfen doğüm gününüzü giriniz (sadece gün)")
-        Dogumay = input("Lütfen doğduğunuz ayı giriniz (sadece ay)")
+        Dogumgun = int(input("Lütfen doğüm gününüzü giriniz (sadece gün)"))
+        Dogumay = int(input("Lütfen doğduğunuz ayı giriniz (sadece ay)"))
         DogumYil = int(input("Lütfen doğuğunuz yılı giriniz (sadece yıl)"))
         DogumGun = driver.find_element(By.XPATH, "//*[@id='requestDogumGun']")
         DogumGun.click()
@@ -42,6 +42,7 @@ def tarih():
         Dogumay = driver.find_element(By.XPATH, "//*[@id='requestDogumAy']")
         Dogumay.click()
         Dogumay.send_keys(Dogumay)
+
         Dogumyil = driver.find_element(By.XPATH, "//*[@id='requestDogumYil']")
         Dogumyil.click()
         Dogumyil.send_keys(DogumYil)
@@ -51,8 +52,8 @@ def serino():
     cevap = str(input("eski kimlik kartı mı? (Evet/Hayır)"))
 
     if cevap == "Evet":
-        eskiSerino = input("Lütfen seri no giriniz ")
-        yeniSerino = input("Lütfen seri no giriniz ")
+        eskiSerino = int(input("Lütfen seri no giriniz "))
+        
         eskiSeriNo = driver.find_element(By.XPATH, "//*[@id='requestCuzdanSeriNo']")
         eskiSeriNo.click()
         eskiSeriNo.send_keys(eskiSerino)
@@ -61,6 +62,7 @@ def serino():
         GeciciKimlikBelgeNo.click()
         GeciciKimlikBelgeNo.send_keys(GeciciKimlikBelgeno)
     else:
+        yeniSerino = int(input("Lütfen seri no giriniz "))
         yeniSeriNo = driver.find_element(By.XPATH, "//*[@id='requestTckkSeriNo']")
         yeniSeriNo.click()
         yeniSeriNo.send_keys(yeniSerino)
